@@ -1,0 +1,96 @@
+<div class="carousel-container">
+    <div class="carousel">
+      <div *ngIf="bandcarrousel; else showcarousel">
+
+        <div class="container  border rounded shadow">
+          <!-- Fila 1: Descripción del producto -->
+          <div class="row mb-3">
+            <div class="col-12  description p-2">
+              <strong>Descripción del Producto:</strong> {{vardetaservice?.detaservice?.description || ''}}
+            </div>
+          </div>
+          <!-- Fila 2: Duración y Tiempo de Duración -->
+          <div class="row mb-3">
+            <div class="col-3 duration2 ">
+              <strong>Duración</strong>
+            </div>
+            <div class="col-9 duration">
+              {{vardetaservice?.detaservice?.duration || ''}}
+            </div>
+          </div>
+          <!-- Fila 3: Precio del Producto -->
+          <div class="row">
+            <div class="col-12 text-center p-3">
+               <span class="price" >{{vardetaservice?.detaservice?.rate || ''}}</span>
+            </div>
+          </div>
+
+          <!-- Fila 3: Precio del Producto -->
+          <div class="row">
+            <div class="col-12 text-center p-3">
+               <span>Make your appointment.</span><button  >enviar</button>
+            </div>
+          </div>
+        </div>        
+        
+      </div>
+      <ng-template #showcarousel>  
+        <!-- Carousel Images -->
+         <!-- Previous Button -->
+        <button (click)="previous()" class="carousel-button prev-button">&#10094;</button>  
+      <div class="carousel-images">
+     
+      <div *ngFor="let detail of vardetaservice?.detaservice;  let i = index" [class.active]="i === currentIndex" class="carousel-image">
+        <div class="container  border rounded shadow">
+          <!-- Fila 1: Descripción del producto -->
+          <div class="row mb-3">
+            <div class="col-12  description p-2">
+              <strong>Descripción del Producto:</strong> {{detail?.description  || ''}}
+            </div>
+          </div>
+          <div *ngFor="let pack of detail.package"  class="text-start " >
+            <i class="fa-solid fa-check fontgold"></i> {{pack?.description  || ''}}
+         </div>
+
+          <!-- Fila 2: Duración y Tiempo de Duración -->
+          <div class="row mb-3">
+            <div class="col-3 duration2 ">
+              <strong>Duración</strong>
+            </div>
+            <div class="col-9 duration">
+              {{detail?.duration || ''}}
+            </div>
+          </div>
+          <!-- Fila 3: Precio del Producto -->
+          <div class="row">
+            <div class="col-12 text-center p-3">
+               <span class="price" >{{detail?.rate || ''}}</span>
+            </div>
+          </div>
+
+          <!-- Fila 3: Precio del Producto -->
+          <div class="row">
+            <div class="col-12 text-center p-3">
+               <span>Make your appointment.</span><button  >enviar</button>
+            </div>
+          </div>
+        </div>
+
+
+              
+            
+          </div>
+        <button (click)="next()" class="carousel-button next-button">&#10095;</button>
+      </div>
+      
+    </ng-template>
+      
+       
+      
+      
+        
+  
+      <!-- Next Button -->
+      
+    </div>
+  

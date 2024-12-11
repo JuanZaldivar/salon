@@ -1,0 +1,120 @@
+.carousel-container {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  }
+  
+  
+
+  .carousel {
+    display: flex;
+    align-items: center;
+  }
+  
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+    background-color: rgba(0, 0, 0, 0); 
+  }
+  
+  .carousel-image {
+    min-width: 100%;
+    display: none;
+    text-align: center;
+  }
+  
+  .carousel-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .carousel-image.active {
+    display: block;
+  }
+  
+  .carousel-button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .prev-button {
+    left: 0;
+  }
+  
+  .next-button {
+    right: 0;
+  }
+  body {
+    background-color: rgba(0, 0, 0, 0); /* Fondo transparente */
+  }
+
+  .product-card {
+    max-width: 400px;
+    margin: auto;
+    border: none;
+  }
+  .product-img {
+    height: 250px;
+    object-fit: cover;
+  }
+  .price {
+    font-size: 1.5rem;
+    color: #28a745;
+    font-weight: bold;
+  }
+  .btn-buy {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .price {
+    font-size: 2rem;
+    color: #343a40; /* Gris oscuro */
+    font-weight: bold;
+  }
+
+  .container {
+    padding: 5; /* Sin padding alrededor del contenedor */
+    width: 410px;
+  }
+  .row {
+    margin: 0; /* Sin margen entre filas */
+  }
+  .col-12, .col-6 {
+    padding: 0; /* Sin padding en columnas */
+  }
+
+  .description {
+    text-align: justify;
+    padding-left: 10px; /* Espacio a la izquierda para la descripción */
+    color: black; /* Color blanco para el texto general */
+  }
+  
+
+  .description strong {
+    color: black; /* Color negro para el texto en <strong> */
+  }
+
+  .duration {
+    text-align: justify;
+    padding-left: 10px; /* Espacio a la izquierda para la descripción */
+    color: black; /* Color blanco para el texto general */
+  }
+  
+
+  .duration2 {
+    text-align: justify;
+    padding-left: 10px; 
+    color: black; /* Color negro para el texto en <strong> */
+  }
+
+  .fontgold{
+    color: yellow;
+  }

@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Navbar con Bootstrap -->
+<nav class="navbar navbar-expand-lg navbar-light">
+       <!-- Logotipo y nombre de la empresa -->
+        <a class="navbar-brand d-flex justify-content-start" href="#">
+            <img src="./assets/images/logo.png" alt="Logotipo">
+            <span class="company-name ">{{generalinfo.name}}</span>
+        </a>
+  
+        <!-- Botón hamburguesa solo para pantallas pequeñas -->
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <!-- Contenedor de enlaces para pantallas grandes -->
+        <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item" i>
+                    <a class="nav-link "   aria-current="page" href="#" i ><i class="fas fa-home me-2"></i><span i18n>Home</span> </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-cogs me-2"></i><span i18n>Services</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-info-circle me-2"></i><span i18n>About Us</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-envelope me-2"></i><span i18n>Contact Us</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" >
+                        <div class="badge-container">
+                            <i class="fas fa-shopping-cart me-2"></i>
+                            <span class="badge">9</span>
+                            
+                        </div>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+  
+        <!-- Offcanvas solo visible en pantallas pequeñas -->
+        <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <!-- Los mismos enlaces pero para pantallas pequeñas -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#"><i class="fas fa-home me-2"></i><span i18n>Home</span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-cogs me-2"></i><span i18n>Services</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-info-circle me-2"></i><span i18n>About</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-envelope me-2"></i><span i18n>Contact Us</span></a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link" href="#"   ><i class="fas fa-shopping-cart me-2"></i ><span i18n>Cart</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+  </nav>
+  <div>
+<div id="leftpaddin">
+    <div class="row justify-content-center mt-3">
+        <!-- Card 1 -->
+        <div class="col-12 col-md-3 order-2 order-md-1">
+            <div class="card  ">
+                <div class="card-body">
+                    <h5 class="card-header">Services</h5>
+                    <div class="row" id="card1">
+                        <div #test>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 2 (centro, 50%) -->
+        <div class="col-12 col-md-6 order-1 order-md-2">
+            <div class="card">
+                <div class="card-body">
+                    <iframe
+      width="100%"
+      height="315"
+      [src]="getEmbedUrl() | safe"  
+      frameborder="0"
+      
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-12 col-md-3 order-3 order-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Card 3</h5>
+                    <button class="btn btn-lg btn-outline-primary" (click)="openModal1()">Open Modal</button>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+  </div>
+ 
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="modal-box">
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close"  (click)="closeModal()" >
+                                <span aria-hidden="true"><i class="demo-icon icon-cancel-circled ">&#xe800;</i></span>
+                            </button>
+                            <div class="modal-body">
+                                <div class="modal-icon">
+                                    <i class="demo-icon icon-corte goldGlow icon" [innerHTML]="varservices?.icon"></i>
+                                </div>
+                                <h3 class="title">{{varservices?.name}}</h3>
+                                <app-carousel [id]="varservices?.idservice  || 0"></app-carousel>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+<router-outlet />
